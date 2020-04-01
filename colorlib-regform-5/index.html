@@ -42,13 +42,13 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
+                                            <input class="input--style-5" type="text" name="first_name" id="name">
                                             <label class="label--desc">first name</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name">
+                                            <input class="input--style-5" type="text" name="last_name" id="apellido">
                                             <label class="label--desc">last name</label>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                             <div class="name">Numero de identificación</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="text" name="company" id="cc">
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             <div class="name">Codigo*</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="text" name="company" id="codigo">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="email" name="email" id="email">
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone">
+                                            <input class="input--style-5" type="text" name="phone" id="phone">
                                             <label class="label--desc">Phone Number</label>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" onclick="test()">Register</button>
                         </div>
                         <br>
                         <div>
@@ -128,15 +128,11 @@
         </div>
     </div>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+   
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    
+    <script src="js/database.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
