@@ -1,0 +1,32 @@
+<app-descripcion-evento></app-descripcion-evento>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <form class="card-body "> 
+                    <label for="nombre" class="mb-0 col-lg-2">NOMBRE</label>
+                    <input type="text" name="nombre" #nombre class="form-control rounded-pill mb-3" autofocus>
+                    <label for="nombre" class="mb-0 col-lg-2">CORREO</label>
+                    <input type="text" name="correo" #correo class="form-control rounded-pill mb-3">
+                    <label for="nombre" class="mb-0 col-lg-2">CARRERA</label>
+                    <input type="text" name="carrera" #carrera class="form-control rounded-pill">
+                    <small id="emailHelp" class="form-text text-muted mb-3 col-lg-10">Este campo es solo para estudiantes del Politecnico Grancolombiano.</small>
+                    <label for="nombre" class="mb-0 col-lg-10">NUMERO DE IDENTIFICACIÓN</label>
+                    <input type="text" name="id" #id class="form-control rounded-pill mb-3">
+                    <label for="modalidad" class="mb-1 col-lg-10">MODALIDAD DEL EVENTO</label>
+                    <div class="custom-control custom-radio mb-1">
+                        <input type="radio" class="custom-control-input" id="presencial" name="radios" checked="checked">
+                        <label for="presencial" class="custom-control-label" id="lpre">PRESENCIAL</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="virtual" name="radios">
+                        <label for="virtual" class="custom-control-label">VIRTUAL</label>
+                    </div>
+                    <button (click)="addUser(nombre, correo, carrera, id)" class="btn btn-primary btn-block mt-4">
+                        ENVIAR
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
