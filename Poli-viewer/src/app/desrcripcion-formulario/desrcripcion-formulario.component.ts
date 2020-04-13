@@ -13,6 +13,7 @@ export class DesrcripcionFormularioComponent implements OnInit {
   }
 
   addUser(nombre, correo, carrera, id) {
+    alert("Usuario añadido");
     console.log("usuario añadido: ", nombre.value, correo.value, carrera.value, id.value);
     return false;
   }
