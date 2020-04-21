@@ -15,3 +15,19 @@
     height: 25%;
     margin-inline-start: 1%;
 }
+
+.bi{
+   justify-content: center; 
+}
+
+.helper{
+    text-align: center;
+    color: white;
+    width: 60%;
+    height: 15%;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: black;
+    background-color: #1592E6;
+    
+}
