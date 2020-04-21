@@ -1,0 +1,17 @@
+.container{
+    margin: 2% 10%;
+}
+
+.principal {
+    border: solid;
+    border-color: #1B224B;
+    color: #666666;
+}
+
+.btn {
+    background-color: #1592E6;
+    font-size: x-large;
+    width: 30%;
+    height: 25%;
+    margin-inline-start: 1%;
+}
