@@ -1,12 +1,11 @@
 <div class="container-fluid mt-4 ">
-    <div class="row justify-content-around mb-2">        <!--    Fila para cada evento   -->
+    <div *ngFor= "let evento of eventos" class="row justify-content-around mb-2">        <!--    Fila para cada evento   -->
         <div class="col-lg-8">                      <!--    Columna a la izquierda para desc. del evento y el boton -->
             <div class="principal rounded p-3">
-                <h3>Cybersecurity</h3>
-                <p>Este es un evento creado para profesores, estudiantes y personal de la comunidad academica, que esten
-                    interesados en la seguridad informatica...</p>
+                <h3>{{ evento.nombre }}</h3>
+                <p>{{ evento.descripcion }}</p>
             </div>
-            <button class="btn mt-3 rounded-pill border-dark">Inscribirme</button>
+            <button class="btn mt-3 rounded-pill border-dark" (click)="getEvent(evento)" routerLink='inscripcion' >Inscribirme</button>
         </div>
         <div class="cont col-3">                      <!--    Columna a la derecha para el icono y contador de personas inscritas-->
             <svg class="bi bi-people-circle" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

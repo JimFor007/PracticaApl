@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) =>{
                 autoIncrement: true 
             },
             nombre:{
-                type: Sequelize.INTEGER,
+                type: Sequelize.STRING,
                 unique: true
             },
             duracion:{

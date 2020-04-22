@@ -6,7 +6,8 @@ import { EventosComponent } from './eventos/eventos.component';
 
 const routes: Routes = [
 {path: '', component: IndexComponent},
-{path: 'event', component: EventosComponent}
+{path: 'evento', component: EventosComponent},
+{path: 'evento/inscripcion', component: DesrcripcionFormularioComponent},
 ];
 
 @NgModule({
