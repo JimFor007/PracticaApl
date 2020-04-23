@@ -1,3 +1,18 @@
+.bord{
+    background-color: #1592e6;
+    border-radius: 20px;
+    border: solid; 
+    border-color:#666666;
+    
+}
+.color{
+    text-anchor: middle;
+    color: white;
+    font-style: italic;
+}
+.decoracion{
+    text-decoration-color: #1592e6;
+}
 .bi-person-square{
     margin-left: 800px;
 }

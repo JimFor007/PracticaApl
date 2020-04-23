@@ -1,0 +1,45 @@
+
+.container{
+    height: 100%;
+    background-color: #1b224b;
+}
+div{
+    background-color: #1b224b;
+}
+
+.bord{
+    border-radius: 20px;
+    border: solid; 
+    border-color:#666666;
+    
+}
+.color{
+    text-anchor: middle;
+    color: white;
+    font-style: italic;
+}
+.color1{
+    text-anchor:middle;
+    color: white;
+    text-align: left;
+    font-size: 15px;
+}
+.color2{
+    text-anchor:middle;
+    color: white;
+    text-align: left;
+    font-size: 13px;
+}
+.board1{
+    border-radius: 9px;
+    border: solid; 
+    border-color:#ffffff;
+}
+.boton{
+    background-color: #666666;
+    text-decoration-color: #666666;
+    border-style: solid;
+    border-color: #666666;
+    color: #ffffff;
+    border-radius: 2px;
+}

@@ -7,6 +7,7 @@ import { DescripcionEventoComponent } from './descripcion-evento/descripcion-eve
 import { DesrcripcionFormularioComponent } from './desrcripcion-formulario/desrcripcion-formulario.component';
 import { IndexComponent } from './index/index.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EventosComponent } from './eventos/eventos.component';
     DescripcionEventoComponent,
     DesrcripcionFormularioComponent,
     IndexComponent,
-    EventosComponent
+    EventosComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
