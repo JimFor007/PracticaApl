@@ -7,13 +7,11 @@ import { LogInComponent } from './log-in/log-in.component';
 
 const routes: Routes = [
 {path: '', component: IndexComponent},
-<<<<<<< HEAD
 {path: 'event', component: EventosComponent},
-{path:'log-in', component: LogInComponent}
-=======
+{path:'log-in', component: LogInComponent},
 {path: 'evento', component: EventosComponent},
 {path: 'evento/inscripcion', component: DesrcripcionFormularioComponent},
->>>>>>> c12d8f5ed56e013aa652251a5858395e7b5070fb
+
 ];
 
 @NgModule({
