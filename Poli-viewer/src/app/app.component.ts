@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { Data } from './models/data.models';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -9,4 +11,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'poli-viewer';
+
+
+  data: Observable<Data>;
+
+  constructor(private http: HttpClient) {
+   this.data = this.http.get<Data>('./assets/data.json');
+ }
 }
