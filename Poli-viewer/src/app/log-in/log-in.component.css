@@ -1,6 +1,9 @@
+#all{
+    height: 717px;
+}
 
 .container{
-    height: 100%;
+    padding-top: 100px;
     background-color: #1b224b;
 }
 div{
