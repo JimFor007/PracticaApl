@@ -8,30 +8,28 @@
                 </div>
             </div>
         </div>
-
-        <div class="row justify-content-center">
-            <div class="col-3">
-                <p class="color2">USUARIO</p>
-                <input type="text" class="board1" style="width: 250px; height: 40px;" maxlength="50" name="USUARIO">
-
-            </div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <p class ="color2">USUARIO</p>
+            <input  class="board1"  style="width: 250px; height: 40px;" maxlength="50" name="UsernameInput"  [(ngModel)]="UsernameInput">
+                
+        </div>
+    </div>
+    
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <p class ="color2">CONTRASEÑA</p>
+            <input type="text" name="passwordInput" [(ngModel)]="passwordInput" class="form-control">   
         </div>
 
-        <div class="row justify-content-center mt-3">
-            <div class="col-3">
-                <p class="color2">CONTRASEÑA</p>
-                <input type="text" class="board1" style="width: 250px; height: 40px;" maxlength="50" name="CONTRASEÑA">
-            </div>
-        </div>
-
-        <div class="row justify-content-center mt-3">
-
-            <div class="row justify-content-rigth mt-3">
-                <div class="col-lg-7 ">
-                    <a routerLink="" class=" boton">Ingresar</a>
-                </div>
-            </div>
-        </div>
+    <div class="row justify-content-center mt-3">
+        
+      <div class="row justify-content-rigth mt-3">
+            <button type="button" class="btn btn-primary btn-lg" (click)="verifyUser(UsernameInput,passwordInput)">log-in</button>
+      </div>
+    </div>
 
 
 

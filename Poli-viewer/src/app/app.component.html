@@ -1,20 +1,21 @@
 <div class="card-header text-center bg-primary">
+        <div class="row justify-content-left mt-3">
+                <div class="col-3 justify-content-center">
+                    <div class=" pt-2 pb-2 p  bord ">
+                        <a href="" class= "decoracion"><h2 class ="color">POLI VIEWER</h2></a>
+                    </div>
+
+                </div>
+            </div>
         <a class="navbar-brand font-weight-bolder text-uppercase text-white" routerLink=''> POLI - VIEWER</a>
-        <svg class="bi bi-person-square" width="2em" height="2em" viewBox="0 0 16 16" fill="#FFFFFF"
-                xmlns="http://www.w3.org/2000/svg" routerLink="log-in">
-                <path fill-rule="evenodd"
-                        d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
-                        clip-rule="evenodd" />
-                <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 100-6 3 3 0 000 6z"
-                        clip-rule="evenodd" />
-        </svg>
+        <button id="add-to-favorites" routerLink="log-in"
+                class="mdc-icon-button"
+                aria-label="Add to favorites"
+                aria-pressed="false">
+                <i class="material-icons md-light">face</i>
+        </button>
 </div>
+
+
+
 <router-outlet></router-outlet>
-<footer class="card-footer bg-primary">
-        <div class="container text-center pt-5 pb-5 text-white">
-                <h5>Contáctenos: 3116479384</h5>
-                <h5>Correo: poliviewer@outlook.com</h5>
-                <a class="navbar-brand font-weight-bolder text-uppercase text-white" href="https://www.poli.edu.co/"
-                        target="blank"> <u>Politécnico Grancolombiano</u> </a>
-        </div>
-</footer>
