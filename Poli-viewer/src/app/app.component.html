@@ -1,21 +1,22 @@
-<div class="card-header text-center bg-primary">
-        <div class="row justify-content-left mt-3">
-                <div class="col-3 justify-content-center">
-                    <div class=" pt-2 pb-2 p  bord ">
-                        <a href="" class= "decoracion"><h2 class ="color">POLI VIEWER</h2></a>
-                    </div>
-
-                </div>
-            </div>
-        <a class="navbar-brand font-weight-bolder text-uppercase text-white" routerLink=''> POLI - VIEWER</a>
-        <button id="add-to-favorites" routerLink="log-in"
-                class="mdc-icon-button"
-                aria-label="Add to favorites"
-                aria-pressed="false">
-                <i class="material-icons md-light">face</i>
+<div class="container-fluid">
+    <div class="row justify-content-between pt-3 pb-3">
+        <div class="col-3 border border-dark text-center ml-5 bg-primary">
+            <a href="" class="decoracion ">
+                <h2 class="color pt-2">POLI VIEWER</h2>
+            </a>
+        </div>
+        <button routerLink="log-in" class="mdc-icon-button mr-5" aria-label="Add to favorites" aria-pressed="false">
+            <i class="material-icons md-light">face</i>
         </button>
+    </div>
 </div>
 
-
-
 <router-outlet></router-outlet>
+
+<footer class="card-footer mt-5">
+    <div class="container text-center pt-5 pb-5 text-white">
+      <h5>Contáctenos: 3116479384</h5>
+      <h5>Correo: poliviewer@outlook.com</h5>
+      <a  class="navbar-brand font-weight-bolder text-uppercase text-white" href="https://www.poli.edu.co/" target="blank"> <u>Politécnico Grancolombiano</u> </a>
+    </div>
+</footer>  

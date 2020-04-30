@@ -1,10 +1,7 @@
-.bord{
-    background-color: #1592e6;
-    border-radius: 20px;
-    border: solid; 
-    border-color:#666666;
-    
+.container-fluid {
+    background-color: #1B224B;
 }
+
 .color{
     text-anchor: middle;
     color: white;
@@ -14,7 +11,6 @@
     text-decoration-color: #1592e6;
 }
 
-
-#add-to-favorites{
-    margin-left: 800px;
+.card-footer{
+    background-color: #666666;
 }

@@ -11,6 +11,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartComponent } from './chart/chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     IndexComponent,
     EventosComponent,
     LogInComponent,
-    ChartComponent
+    ChartComponent,
+    MisEventosComponent
   ],
   imports: [
     BrowserModule,
