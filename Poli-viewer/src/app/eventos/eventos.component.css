@@ -18,12 +18,14 @@
 
 .bi{
    justify-content: center; 
+   margin-left: 7%;
 }
 
-.helper{
+.helper{    
+    margin-left: 5%;
     text-align: center;
     color: white;
-    width: 60%;
+    width: 20%;
     height: 15%;
     border-style: ridge;
     border-width: 1px;

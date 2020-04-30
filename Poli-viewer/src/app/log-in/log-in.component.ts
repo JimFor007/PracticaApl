@@ -32,7 +32,7 @@ export class LogInComponent implements OnInit {
     let auth = false;
     for (let i = 0; i < this.Users.length; i++) {
       if(UsernameInput == this.Users[i].username && passwordInput == this.Users[i].password){
-        this.router.navigate (['']);
+        this.router.navigate (['admin']);
         auth = true;
       }    
     }

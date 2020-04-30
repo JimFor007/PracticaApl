@@ -1,0 +1,52 @@
+.title {
+    justify-content: center;
+    height: 10%;
+    border: solid;
+    border-width: 3px;
+    border-color: #1B224B;
+    margin-right: 20%;
+}
+
+.icon {
+    padding-left: 10%;
+}
+
+.logout {
+    height: 30%;
+    width: 30%;
+    border: solid;
+    border-width: 2px;
+    background-color: gray;
+}
+
+.principal {
+    border: solid;
+    border-color: #1B224B;
+    color: #666666;
+}
+
+.btn {
+    background-color: #1592E6;
+    font-size: x-large;
+    width: 30%;
+    height: 25%;
+    margin-inline-start: 1%;
+}
+
+.icon2{
+    justify-content: center; 
+    margin-left: 7%;
+ }
+ 
+ .helper{    
+     margin-left: 5%;
+     text-align: center;
+     color: white;
+     width: 20%;
+     height: 15%;
+     border-style: ridge;
+     border-width: 1px;
+     border-color: black;
+     background-color: #1592E6;
+     
+ }

@@ -5,6 +5,7 @@ import { DesrcripcionFormularioComponent } from './desrcripcion-formulario/desrc
 import { EventosComponent } from './eventos/eventos.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ChartComponent } from './chart/chart.component';
+import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
 
 const routes: Routes = [
 {path: '', component: IndexComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
 {path:'log-in', component: LogInComponent},
 {path: 'evento', component: EventosComponent},
 {path: 'inscripcion', component: DesrcripcionFormularioComponent},
-{path: 'charts', component:ChartComponent}
+{path: 'charts', component:ChartComponent},
+{path: 'admin', component: MisEventosComponent}
 
 ];
 
