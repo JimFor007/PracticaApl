@@ -37,12 +37,7 @@ async function createAdmin(req,res){
 async function getAllAdmins(req, res){
     try {
         const ALL_ADMINS = await dbManager.Admin.findAll ();
-    
-        res.send(
-            {
-                data: ALL_ADMINS
-            }
-        );    
+        res.json(ALL_ADMINS);    
     } catch (error) {
         console.log(error);
         res.status (500).send (

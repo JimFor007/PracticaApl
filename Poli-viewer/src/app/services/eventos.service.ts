@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { ALL_EVENTS } from '../mockinfo/events.db.mock'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventosService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllEvents() {
-    return ALL_EVENTS;
+    return this.http.get('http://localhost:3030/events/');
   }
 }

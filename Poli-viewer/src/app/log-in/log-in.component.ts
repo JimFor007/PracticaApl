@@ -4,6 +4,7 @@ import {User} from '../models/user.models';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { values } from 'd3';
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LogInComponent implements OnInit {
 
-  Users;
+  Admins: any = [];
 
   UsernameInput: String='';
   passwordInput: String='';
@@ -22,18 +23,22 @@ export class LogInComponent implements OnInit {
   constructor(private UserService: UsersService, private router: Router) { }
 
   getData(){
-    this.Users = this.UserService.getAllAdmins ();
+    this.UserService.getAllAdmins ().subscribe (
+      res => {
+        this.Admins = res
+      },
+      err => console.error(err)
+    );
   }
 
 
   verifyUser(UsernameInput,passwordInput){
-    console.log(this.Users);
     let auth = false;
-    for (let i = 0; i < this.Users.length; i++) {
-      if(UsernameInput == this.Users[i].userName && passwordInput == this.Users[i].password){
-        this.router.navigate (['admin']);
+    for (let i = 0; i < this.Admins.length; i++) {
+      if(UsernameInput == this.Admins[i].userName && passwordInput == this.Admins[i].password){
+        this.router.navigate (['']);
         auth = true;
-      }    
+      }
     }
     if(!auth)
       alert('Usuario o contraseña incorrecta')

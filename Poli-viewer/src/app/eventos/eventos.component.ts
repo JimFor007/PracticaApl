@@ -12,14 +12,18 @@ export class EventosComponent implements OnInit {
   eventos;
 
 
-  constructor(private eventosService: EventosService) {
-    this.getAllEvents();
-   }
+  constructor(private eventosService: EventosService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getAllEvents();
+  }
 
   getAllEvents (){
-    this.eventos = this.eventosService.getAllEvents ();
+    this.eventos = this.eventosService.getAllEvents ().subscribe (
+      res => {
+        this.eventos = res;
+      }, error => console.error(error)
+    );
   }
 
   getEvent({ nombre }) {

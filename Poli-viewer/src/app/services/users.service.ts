@@ -6,18 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  Admins;
-
   constructor(private http: HttpClient) { }
 
   getAllAdmins(){
-    this.http.get('localhost:3030/admin/').subscribe (
-      (res: any) => {
-         this.Admins = res; 
-      }
-    ), (err: any) => {
-      console.log(err);
-    }
-    return this.Admins;
+    return this.http.get('http://localhost:3030/admin/');
   }
 }

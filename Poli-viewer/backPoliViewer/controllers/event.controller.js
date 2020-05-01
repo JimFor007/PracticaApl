@@ -16,7 +16,7 @@ async function createEvent(req,res){
     const newEventObject = {
         nombre: req.body.nombre,
         duracion: req.body.duracion,
-        descripcion: req.body.duracion,
+        descripcion: req.body.descripcion,
         virtual: req.body.virtual,
     }
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
@@ -35,6 +35,21 @@ async function createEvent(req,res){
         }
     );
 }
+
+async function getAllEvents(req, res){
+    try {
+        const ALL_EVENTS = await dbManager.Event.findAll ();
+        res.json(ALL_EVENTS);    
+    } catch (error) {
+        console.log(error);
+        res.status (500).send (
+            {
+                message: "ERROR, SO SORRY!!!"
+            }
+        );
+    }
+}
 //EXPORTS
 exports.createEvent= createEvent;
+exports.getAllEvents = getAllEvents;
     
