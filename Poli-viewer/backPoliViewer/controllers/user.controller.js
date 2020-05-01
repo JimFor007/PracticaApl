@@ -15,7 +15,7 @@ async function createUser(req,res){
             }
         );
         return;
-}
+    }
 // CREATING THE OBJECT TO PERSIST
     const newUserObject = {
         cc: req.body.cc,
@@ -46,9 +46,28 @@ async function createUser(req,res){
     );
 }
 
+async function getAllUsers(req, res){
+    try {
+        const ALL_USERS = await dbManager.User.findAll ();
+    
+        res.send(
+            {
+                data: ALL_USERS
+            }
+        );    
+    } catch (error) {
+        console.log(error);
+        res.status (500).send (
+            {
+                message: "ERROR, SO SORRY!!!"
+            }
+        );
+    }
+}
 
 
 //EXPORTS
 
 exports.createUser= createUser;
+exports.getAllUsers = getAllUsers;
     

@@ -18,8 +18,7 @@ module.exports = (sequelize, Sequelize) =>{
             },
             virtual:{
                 type: Sequelize.BOOLEAN
-            },
-            creation_date: Sequelize.DATE,
+            }
         }, {
             tableName: "events"
         }

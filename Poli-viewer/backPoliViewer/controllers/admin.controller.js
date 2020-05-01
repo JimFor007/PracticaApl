@@ -13,11 +13,12 @@ async function createAdmin(req,res){
         return;
 }
 // CREATING THE OBJECT TO PERSIST
-    const newUserObject = {
+    const newAdminObject = {
+        userName: req.body.userName,
         password: req.body.password
     }
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
-    dbManager.User.create(newUserObject).then (
+    dbManager.Admin.create(newAdminObject).then (
         data => {
             res.send (data);
         }
@@ -32,6 +33,26 @@ async function createAdmin(req,res){
         }
     );
 }
+
+async function getAllAdmins(req, res){
+    try {
+        const ALL_ADMINS = await dbManager.Admin.findAll ();
+    
+        res.send(
+            {
+                data: ALL_ADMINS
+            }
+        );    
+    } catch (error) {
+        console.log(error);
+        res.status (500).send (
+            {
+                message: "ERROR, SO SORRY!!!"
+            }
+        );
+    }
+}
 //EXPORTS
-exports.createAdmin= createAdmin;
+exports.createAdmin = createAdmin;
+exports.getAllAdmins = getAllAdmins;
     

@@ -6,11 +6,14 @@ module.exports = (sequelize, Sequelize) =>{
                 primaryKey: true,
                 autoIncrement: true 
             },
-            password:{
+            userName:{
                 type: Sequelize.STRING,
                 unique: true
             },
-            creation_date: Sequelize.DATE,
+            password:{
+                type: Sequelize.STRING,
+                unique: true
+            }
         }, {
             tableName: "admins"
         }

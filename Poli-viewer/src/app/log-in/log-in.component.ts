@@ -19,19 +19,18 @@ export class LogInComponent implements OnInit {
   
 
 
-  constructor(private UserService: UsersService, private router: Router) { 
-    this.getData();
-  }
+  constructor(private UserService: UsersService, private router: Router) { }
 
   getData(){
-    this.Users=this.UserService.getAllUsers ();
+    this.Users = this.UserService.getAllAdmins ();
   }
 
 
   verifyUser(UsernameInput,passwordInput){
+    console.log(this.Users);
     let auth = false;
     for (let i = 0; i < this.Users.length; i++) {
-      if(UsernameInput == this.Users[i].username && passwordInput == this.Users[i].password){
+      if(UsernameInput == this.Users[i].userName && passwordInput == this.Users[i].password){
         this.router.navigate (['admin']);
         auth = true;
       }    
@@ -43,6 +42,7 @@ export class LogInComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getData();
   }
 
 }

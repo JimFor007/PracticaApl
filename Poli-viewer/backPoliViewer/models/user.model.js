@@ -41,8 +41,7 @@ module.exports = (sequelize, Sequelize) =>{
             email:{
                 type: Sequelize.STRING,
                 unique: true
-            },
-            creation_date: Sequelize.DATE,
+            }
         }, {
             tableName: "users"
         }

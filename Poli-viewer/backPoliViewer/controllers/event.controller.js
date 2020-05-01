@@ -13,14 +13,14 @@ async function createEvent(req,res){
         return;
 }
 // CREATING THE OBJECT TO PERSIST
-    const newUserObject = {
+    const newEventObject = {
         nombre: req.body.nombre,
         duracion: req.body.duracion,
         descripcion: req.body.duracion,
         virtual: req.body.virtual,
     }
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
-    dbManager.User.create(newUserObject).then (
+    dbManager.Event.create(newEventObject).then (
         data => {
             res.send (data);
         }

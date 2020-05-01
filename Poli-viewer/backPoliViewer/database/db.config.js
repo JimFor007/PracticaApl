@@ -4,7 +4,7 @@
 const dbconfig = {
     HOST: "localhost",
     USER: "root",
-    PASSWORD: "root",
+    PASSWORD: "MichelleMRO*2",
     DB: "practicaapl",
     dialect: "mysql",
     pool: {
