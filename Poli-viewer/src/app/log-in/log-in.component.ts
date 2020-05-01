@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../services/users.service';
-import {User} from '../models/user.models';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
-import { values } from 'd3';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
