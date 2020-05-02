@@ -18,6 +18,7 @@ async function createEvent(req,res){
         duracion: req.body.duracion,
         descripcion: req.body.descripcion,
         virtual: req.body.virtual,
+        numberParticipants: req.body.numberParticipants,
     }
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
     dbManager.Event.create(newEventObject).then (
@@ -49,7 +50,46 @@ async function getAllEvents(req, res){
         );
     }
 }
+
+async function getEventById(req,res){
+    try {
+        const { id } = req.params;
+        await dbManager.Event.findOne({where: {idEvent: id}}).then (
+            event => {
+                res.json(event)
+            }
+        );
+        res.send ("------ EVENT FOUNDED -----");
+    } catch (error) {
+        console.log(error);
+        res.status (500).send (
+            {
+                message: "ERROR, SO SORRY!!!"
+            }
+        );
+    }
+}
+
+async function updateEvent(req, res){
+    try {
+        const { id } = req.params;
+        await dbManager.Event.findOne ({where: {idEvent: id}}).then(
+            event => {
+                event.update (req.body);
+            }
+        ); 
+        res.send("EVENT UPDATED");
+    } catch (error) {
+        console.log(error);
+        res.status (400).send (
+            {
+                message: "ERROR TO UPDATE EVENT"
+            }
+        );
+    }
+}
 //EXPORTS
 exports.createEvent= createEvent;
 exports.getAllEvents = getAllEvents;
-    
+exports.updateEvent = updateEvent;
+exports.getEventById = getEventById;

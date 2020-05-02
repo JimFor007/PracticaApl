@@ -18,7 +18,8 @@ module.exports = (sequelize, Sequelize) =>{
             },
             virtual:{
                 type: Sequelize.BOOLEAN
-            }
+            },
+            numberParticipants: type = Sequelize.INTEGER
         }, {
             tableName: "events"
         }

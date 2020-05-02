@@ -25,9 +25,4 @@ export class EventosComponent implements OnInit {
       }, error => console.error(error)
     );
   }
-
-  getEvent({ nombre }) {
-    console.log(nombre);
-  }
-
 }

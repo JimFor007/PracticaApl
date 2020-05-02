@@ -11,4 +11,13 @@ export class EventosService {
   getAllEvents() {
     return this.http.get('http://localhost:3030/events/');
   }
+
+  getEventById(id: string) {
+    return this.http.get(`http://localhost:3030/events/${id}`);
+  }
+
+  updateEvent(id: string, updatedEvent: any){
+    return this.http.put(`http://localhost:3030/events/${id}`, updatedEvent);
+  }
+
 }

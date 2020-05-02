@@ -12,7 +12,7 @@ const routes: Routes = [
 {path: 'event', component: EventosComponent},
 {path:'log-in', component: LogInComponent},
 {path: 'evento', component: EventosComponent},
-{path: 'inscripcion', component: DesrcripcionFormularioComponent},
+{path: 'inscripcion/:idEvent', component: DesrcripcionFormularioComponent},
 {path: 'charts', component:ChartComponent},
 {path: 'admin', component: MisEventosComponent}
 

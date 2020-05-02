@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from '../services/users.service';
+import { AdminService } from '../services/admin.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,42 +11,39 @@ export class LogInComponent implements OnInit {
 
   Admins: any = [];
 
-  UsernameInput: String='';
-  passwordInput: String='';
-
-  
+  UsernameInput: string = '';
+  passwordInput: string = '';
 
 
-  constructor(private UserService: UsersService, private router: Router) { }
 
-  getData(){
-    this.UserService.getAllAdmins ().subscribe (
+
+  constructor(private AdminService: AdminService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.AdminService.getAllAdmins().subscribe(
       res => {
-        this.Admins = res
+        this.Admins = res;
       },
       err => console.error(err)
     );
   }
 
 
-  verifyUser(UsernameInput,passwordInput){
+  verifyUser(UsernameInput: string, passwordInput: string) {
     let auth = false;
     for (let i = 0; i < this.Admins.length; i++) {
-      if(UsernameInput == this.Admins[i].userName && passwordInput == this.Admins[i].password){
-        localStorage.setItem ("currentUser-name", UsernameInput);
-        localStorage.setItem ("currentUser-password", passwordInput);
-        this.router.navigate (['admin']);
+      if (UsernameInput == this.Admins[i].userName && passwordInput == this.Admins[i].password) {
+        localStorage.setItem("currentUser-name", UsernameInput);
+        localStorage.setItem("currentUser-password", passwordInput);
+        this.router.navigate(['admin']);
         auth = true;
       }
     }
-    if(!auth)
+    if (!auth)
       alert('Usuario o contraseña incorrecta')
-  
-}
-
-
-  ngOnInit(): void {
-    this.getData();
   }
-
 }
