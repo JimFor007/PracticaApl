@@ -33,7 +33,9 @@ export class LogInComponent implements OnInit {
     let auth = false;
     for (let i = 0; i < this.Admins.length; i++) {
       if(UsernameInput == this.Admins[i].userName && passwordInput == this.Admins[i].password){
-        this.router.navigate (['']);
+        localStorage.setItem ("currentUser-name", UsernameInput);
+        localStorage.setItem ("currentUser-password", passwordInput);
+        this.router.navigate (['admin']);
         auth = true;
       }
     }
