@@ -4,5 +4,7 @@ export class Event  {
     duracion: number;
     descripcion: string;
     virtual: boolean;
-    creation_date: Date;
+    numberParticipants: number;
+    createdAt: Date;
+    updatedAt: Date;
 }

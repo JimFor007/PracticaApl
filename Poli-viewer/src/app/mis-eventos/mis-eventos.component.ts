@@ -7,21 +7,24 @@ import { EventosService } from '../services/eventos.service';
   styleUrls: ['./mis-eventos.component.css']
 })
 export class MisEventosComponent implements OnInit {
-  eventos;
+  eventos: any;
 
 
-  constructor(private eventosService: EventosService) {
-    this.getAllEvents();
+  constructor(private eventosService: EventosService) { }
+
+  ngOnInit(): void {
+    this.getAllEvents ();
    }
 
-  ngOnInit(): void { }
-
   getAllEvents (){
-    this.eventos = this.eventosService.getAllEvents ();
+    this.eventosService.getAllEvents ().subscribe (
+      res => {
+        this.eventos = res;
+      }, error => console.log(error)
+    );
   }
 
   getEvent({ nombre }) {
     console.log(nombre);
   }
-
 }
