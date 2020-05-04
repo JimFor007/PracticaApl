@@ -7,18 +7,13 @@ module.exports = (sequelize, Sequelize) =>{
                 autoIncrement: true 
             },
             nombre:{
-                type: Sequelize.STRING,
+                type: Sequelize.STRING (40),
                 unique: true
             },
-            duracion:{
-                type: Sequelize.INTEGER
-            },
-            descripcion: {
-                type: Sequelize.STRING
-            },
-            virtual:{
-                type: Sequelize.BOOLEAN
-            },
+            duracion: type = Sequelize.INTEGER,
+            descripcion: type = Sequelize.STRING (1000),
+            virtual: type= Sequelize.BOOLEAN,
+            lugar: type = sequelize.STRING (50),
             numberParticipants: type = Sequelize.INTEGER
         }, {
             tableName: "events"

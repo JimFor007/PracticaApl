@@ -14,7 +14,14 @@ const User = UserModel (sequelizeConnection, Sequelize);
 const Event = eventModel (sequelizeConnection, Sequelize);
 const Admin = adminModel (sequelizeConnection, Sequelize);
 const Place = placeModel (sequelizeConnection, Sequelize);
+
 //CREATE RELATIONS BETWEEN MODELS
+Admin.hasMany (Event, { foreingKey: 'idEvent', sourceKey: 'idAdmin' });
+Event.belongsTo (Admin, { foreingKey: 'idAdmin', sourcekey: 'idEvent' });
+
+Event.hasMany (User, { foreingKey: 'idUser', sourceKey: 'idEvent' });
+User.belongsTo (Event, { foreingKey: 'idEvent', sourcekey: 'idUser' });
+
 
 //GROUP MODELS
 const models = {

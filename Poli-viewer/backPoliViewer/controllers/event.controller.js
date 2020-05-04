@@ -19,6 +19,7 @@ async function createEvent(req,res){
         descripcion: req.body.descripcion,
         virtual: req.body.virtual,
         numberParticipants: req.body.numberParticipants,
+        AdminIdAdmin: req.params.id
     }
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
     dbManager.Event.create(newEventObject).then (
@@ -76,6 +77,24 @@ async function getEventById(req,res){
     }
 }
 
+async function getEventByAdmin(req, res){
+    try {
+        const { id } = req.params;
+        await dbManager.Event.findOne({ where: {AdminidAdmin: id} }).then(
+            event => {
+                res.json(event);
+            },error => console.log(error)
+        );
+    } catch (error) {
+        console.log(error);
+        res.status (500).send (
+            {
+                message: "ERROR, SO SORRY!!!"
+            }
+        );
+    }
+}
+
 async function updateEvent(req, res){
     try {
         const { id } = req.params;
@@ -99,3 +118,4 @@ exports.createEvent= createEvent;
 exports.getAllEvents = getAllEvents;
 exports.updateEvent = updateEvent;
 exports.getEventById = getEventById;
+exports.getEventByAdmin = getEventByAdmin;
