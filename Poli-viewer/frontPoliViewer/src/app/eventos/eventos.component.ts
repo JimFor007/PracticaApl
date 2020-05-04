@@ -9,7 +9,7 @@ import { EventosService } from '../services/eventos.service';
 export class EventosComponent implements OnInit {
   
 
-  eventos;
+  eventos: any;
 
 
   constructor(private eventosService: EventosService) { }

@@ -14,9 +14,9 @@ export class DesrcripcionFormularioComponent implements OnInit {
   constructor(private activedRoute: ActivatedRoute, private EventosService: EventosService) { }
 
   ngOnInit() {
-    const params = this.activedRoute.snapshot.params;
-    if(params.idEvent){
-      this.EventosService.getEventById(params.idEvent).subscribe(
+    const { idEvent } = this.activedRoute.snapshot.params;
+    if(idEvent){
+      this.EventosService.getEventById(idEvent).subscribe(
         res => {
           this.event = res;
         }, error => console.log(error)
@@ -24,14 +24,9 @@ export class DesrcripcionFormularioComponent implements OnInit {
     }
   }
 
-  inscripcion(nombre, correo, carrera, id) {
-    delete this.event.createdAt;
+  inscripcion() {
     this.event.numberParticipants += 1;
-    this.EventosService.updateEvent (this.event.idEvent, this.event).subscribe (
-      res=>{
-          console.log(res);
-      }, error => console.log(error)
-    );
-    
+    this.EventosService.updateEvent (this.event.idEvent, this.event);
+    console.log (this.event.numberParticipants);
   }
 }

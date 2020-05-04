@@ -8,16 +8,18 @@ import { EventosService } from '../services/eventos.service';
 })
 export class MisEventosComponent implements OnInit {
   eventos: any;
+  idAdmin: string;
 
 
   constructor(private eventosService: EventosService) { }
 
   ngOnInit(): void {
-    this.getAllEvents ();
+    this.idAdmin = localStorage.getItem('idAdmin');
+    this.getAllMyEvents ();
    }
 
-  getAllEvents (){
-    this.eventosService.getAllEvents ().subscribe (
+  getAllMyEvents (){
+    this.eventosService.getEventByAdmin (this.idAdmin).subscribe (
       res => {
         this.eventos = res;
       }, error => console.log(error)

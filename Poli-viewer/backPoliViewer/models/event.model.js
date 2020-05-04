@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize) =>{
             duracion: type = Sequelize.INTEGER,
             descripcion: type = Sequelize.STRING (1000),
             virtual: type= Sequelize.BOOLEAN,
-            lugar: type = sequelize.STRING (50),
+            lugar: type = Sequelize.STRING (50),
             numberParticipants: type = Sequelize.INTEGER
         }, {
             tableName: "events"

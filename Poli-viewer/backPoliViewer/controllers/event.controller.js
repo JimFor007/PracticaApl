@@ -77,10 +77,10 @@ async function getEventById(req,res){
     }
 }
 
-async function getEventByAdmin(req, res){
+async function getEventsByAdmin(req, res){
     try {
         const { id } = req.params;
-        await dbManager.Event.findOne({ where: {AdminidAdmin: id} }).then(
+        await dbManager.Event.findAll({ where: {AdminidAdmin: id} }).then(
             event => {
                 res.json(event);
             },error => console.log(error)
@@ -118,4 +118,4 @@ exports.createEvent= createEvent;
 exports.getAllEvents = getAllEvents;
 exports.updateEvent = updateEvent;
 exports.getEventById = getEventById;
-exports.getEventByAdmin = getEventByAdmin;
+exports.getEventsByAdmin = getEventsByAdmin;

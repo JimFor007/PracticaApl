@@ -9,11 +9,15 @@ export class EventosService {
   constructor(private http: HttpClient) { }
 
   getAllEvents() {
-    return this.http.get('http://localhost:3030/events/');
+    return this.http.get(`http://localhost:3030/events/`);
   }
 
-  getEventById(id: string) {
-    return this.http.get(`http://localhost:3030/events/${id}`);
+  getEventByAdmin(idAdmin: string) {
+    return this.http.get(`http://localhost:3030/events/byAdmin/${idAdmin}`);
+  }
+
+  getEventById(idEvent: string) {
+    return this.http.get(`http://localhost:3030/events/${idEvent}`);
   }
 
   updateEvent(id: string, updatedEvent: any){

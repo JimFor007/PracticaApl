@@ -4,19 +4,6 @@
     border: solid;
     border-width: 3px;
     border-color: #1B224B;
-    margin-right: 20%;
-}
-
-.icon {
-    padding-left: 10%;
-}
-
-.logout {
-    height: 30%;
-    width: 30%;
-    border: solid;
-    border-width: 2px;
-    background-color: gray;
 }
 
 .principal {
