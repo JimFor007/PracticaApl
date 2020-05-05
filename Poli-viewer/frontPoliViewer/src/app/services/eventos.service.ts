@@ -20,8 +20,8 @@ export class EventosService {
     return this.http.get(`http://localhost:3030/events/${idEvent}`);
   }
 
-  updateEvent(id: string, updatedEvent: any){
-    return this.http.put(`http://localhost:3030/events/${id}`, updatedEvent);
+  updateEvent(idEvent: number, updatedEvent: any){
+    return this.http.put(`http://localhost:3030/events/${idEvent.toString()}`, updatedEvent);
   }
 
 }

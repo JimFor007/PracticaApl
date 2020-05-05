@@ -9,7 +9,8 @@ import { EventosService } from '../services/eventos.service'
   styleUrls: ['./desrcripcion-formulario.component.css']
 })
 export class DesrcripcionFormularioComponent implements OnInit {
-
+  
+  rol = "asdf";
   event: any = [];
   constructor(private activedRoute: ActivatedRoute, private EventosService: EventosService) { }
 
@@ -24,9 +25,16 @@ export class DesrcripcionFormularioComponent implements OnInit {
     }
   }
 
+  setRol(rol: string) {
+    this.rol = rol;
+  }
+
   inscripcion() {
     this.event.numberParticipants += 1;
-    this.EventosService.updateEvent (this.event.idEvent, this.event);
-    console.log (this.event.numberParticipants);
+    this.EventosService.updateEvent (this.event.idEvent, this.event).subscribe (
+      res=>{
+        console.log("******** EVENT UPDATED *******");
+      },error => console.log(error)
+    );
   }
 }
