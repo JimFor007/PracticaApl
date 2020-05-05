@@ -1,4 +1,16 @@
-<h2>{{ title }}</h2>  
-<svg width="900" height="500"></svg>  
+<div class="container">
+      <li class="nav-item">
+        <a>Chart</a>
+        <div style="display: block">
+            <canvas baseChart
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType"></canvas>
+          </div>
+      </li>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
 
 
