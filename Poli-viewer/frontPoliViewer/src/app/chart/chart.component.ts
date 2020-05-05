@@ -8,25 +8,30 @@ import { EventosService } from '../services/eventos.service';
 })
 export class ChartComponent implements OnInit{
 
-  eventos: any;
-
+  eventos: any=[];
 
   constructor(private eventosService: EventosService) { }
 
-  public doughnutChartLabels = ['Big Data', 'Cyber Security', 'Maratones de programación'];
-  public doughnutChartData = [120, 150, 180];
+  /*public doughnutChartLabels = ['Big Data', 'Cyber Security', 'Maratones de programación'];
+  public doughnutChartData = [120, 150, 180];*/
   public doughnutChartType = 'doughnut';
-  
+
+  public doughnutChartLabels=[];
+  public doughnutChartData=[];
+
   ngOnInit() {
     this.getAllEvents();
   }
 
   getAllEvents (){
-    this.eventos = this.eventosService.getAllEvents ().subscribe (
+    this.eventosService.getAllEvents().subscribe (
       res => {
         this.eventos = res;
+        for (let i = 0; i<this.eventos.length; i++) {
+          this.doughnutChartLabels.push(this.eventos[i].nombre);
+          this.doughnutChartData.push(Number(this.eventos[i].numberParticipants)); 
+        }
       }, error => console.error(error)
     );
   }
-  
 }
