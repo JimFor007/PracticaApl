@@ -1,9 +1,9 @@
 .title {
-    justify-content: center;
     height: 10%;
     border: solid;
     border-width: 3px;
     border-color: #1B224B;
+    margin-left: 20%;
 }
 
 .principal {

@@ -6,6 +6,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ChartComponent } from './chart/chart.component';
 import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
+import { EventCreationComponent } from './event-creation/event-creation.component'
 
 const routes: Routes = [
 {path: '', component: IndexComponent},
@@ -14,8 +15,8 @@ const routes: Routes = [
 {path: 'evento', component: EventosComponent},
 {path: 'inscripcion/:idEvent', component: DesrcripcionFormularioComponent},
 {path: 'charts', component:ChartComponent},
-{path: 'admin', component: MisEventosComponent}
-
+{path: 'admin', component: MisEventosComponent},
+{path: 'admin/event-creation', component: EventCreationComponent}
 ];
 
 @NgModule({

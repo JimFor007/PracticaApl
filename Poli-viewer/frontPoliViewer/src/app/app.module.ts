@@ -14,6 +14,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ChartComponent } from './chart/chart.component';
 import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
+import { EventCreationComponent } from './event-creation/event-creation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
     EventosComponent,
     LogInComponent,
     ChartComponent,
-    MisEventosComponent
+    MisEventosComponent,
+    EventCreationComponent
   ],
   imports: [
     BrowserModule,
