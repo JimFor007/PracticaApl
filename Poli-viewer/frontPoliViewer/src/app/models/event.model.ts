@@ -1,10 +1,8 @@
 export class Event  {
-    idEvent: number;
     nombre: string;
     duracion: number;
     descripcion: string;
     virtual: boolean;
+    lugar: string;
     numberParticipants: number;
-    createdAt: Date;
-    updatedAt: Date;
 }

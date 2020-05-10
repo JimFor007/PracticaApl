@@ -18,6 +18,7 @@ async function createEvent(req,res){
         duracion: req.body.duracion,
         descripcion: req.body.descripcion,
         virtual: req.body.virtual,
+        lugar: req.body.lugar,
         numberParticipants: req.body.numberParticipants,
         AdminIdAdmin: req.params.id
     }

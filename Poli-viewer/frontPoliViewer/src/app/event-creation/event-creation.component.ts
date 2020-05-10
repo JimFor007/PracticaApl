@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Event } from '../models/event.model'
+import { EventosService } from '../services/eventos.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-event-creation',
@@ -7,18 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventCreationComponent implements OnInit {
 
-  name:string;
-  description:string;
-  duration:string;
-  virtual: string;
-  place:string;
+  event: Event = {
+    nombre: '',
+    duracion: 0,
+    descripcion: '',
+    virtual: false,
+    lugar: '',
+    numberParticipants: 0,
+  };
 
-  constructor() { }
+  constructor(private eventosService: EventosService, private router: Router) { }
 
   ngOnInit(): void {
   }
   
-  create (){
-    alert("EVENTO CREADO :)");
+  create (name: string, description: string, duration: number, virtual: boolean, place: string){
+    this.event.nombre = name;
+    this.event.duracion = duration;
+    this.event.descripcion = description; 
+    this.event.virtual = virtual;
+    this.event.lugar = place;
+    this.eventosService.createEvent(localStorage.getItem ('idAdmin'), this.event).subscribe(
+      (res:Event) => {
+        alert ("SE HA CREADO EL EVENTO SATISFACTORIAMENTE");
+        this.router.navigate (['admin']);
+      }, error => console.error (error)
+    );
   }
 }
