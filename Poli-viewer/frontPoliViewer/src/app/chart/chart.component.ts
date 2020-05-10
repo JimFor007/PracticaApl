@@ -1,5 +1,7 @@
 import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsulation } from '@angular/core';
 import { EventosService } from '../services/eventos.service';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
 @Component({
   selector: 'app-barchart',
   templateUrl: './chart.component.html',
@@ -12,13 +14,18 @@ export class ChartComponent implements OnInit{
 
   constructor(private eventosService: EventosService) { }
 
-  /*public doughnutChartLabels = ['Big Data', 'Cyber Security', 'Maratones de programación'];
-  public doughnutChartData = [120, 150, 180];*/
-  public doughnutChartType = 'doughnut';
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  barChartLabels: Label[] = [];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
 
-  public doughnutChartLabels=[];
-  public doughnutChartData=[];
-
+  barChartData: ChartDataSets[] = [
+    { data: [], label: 'Eventos' }
+  ];
+  
   ngOnInit() {
     this.getAllEvents();
   }
@@ -28,10 +35,11 @@ export class ChartComponent implements OnInit{
       res => {
         this.eventos = res;
         for (let i = 0; i<this.eventos.length; i++) {
-          this.doughnutChartLabels.push(this.eventos[i].nombre);
-          this.doughnutChartData.push(Number(this.eventos[i].numberParticipants)); 
+          this.barChartLabels.push(this.eventos[i].nombre);
+          this.barChartData[0].data.push(this.eventos[i].numberParticipants); 
         }
       }, error => console.error(error)
     );
   }
+  
 }
