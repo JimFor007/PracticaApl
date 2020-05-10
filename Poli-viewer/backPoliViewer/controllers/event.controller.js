@@ -44,7 +44,6 @@ async function getAllEvents(req, res){
         let ALL_EVENTS;
         await dbManager.Event.findAll(). then(
             event => {
-                delete event.createdAt,
                 ALL_EVENTS = event
             }
         );

@@ -10,8 +10,8 @@ export class EventosService {
 
   constructor(private http: HttpClient) { }
 
-  getAllEvents() {
-    return this.http.get(`http://localhost:3030/events/`);
+  getAllEvents(): Observable<Event>{
+    return this.http.get<Event>(`http://localhost:3030/events/`);
   }
 
   getEventByAdmin(idAdmin: string) {

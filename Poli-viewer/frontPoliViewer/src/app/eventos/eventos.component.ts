@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventosService } from '../services/eventos.service';
+import { Event } from '../models/event.model';
 
 @Component({
   selector: 'app-eventos',
@@ -9,7 +10,7 @@ import { EventosService } from '../services/eventos.service';
 export class EventosComponent implements OnInit {
   
 
-  eventos: any;
+  eventos:any = [];
 
 
   constructor(private eventosService: EventosService) { }
@@ -20,8 +21,8 @@ export class EventosComponent implements OnInit {
 
   getAllEvents (){
     this.eventos = this.eventosService.getAllEvents ().subscribe (
-      res => {
-        this.eventos = res;
+      events => {
+        this.eventos = events;
       }, error => console.error(error)
     );
   }
