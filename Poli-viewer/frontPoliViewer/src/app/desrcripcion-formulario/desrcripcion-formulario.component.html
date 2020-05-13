@@ -20,7 +20,9 @@
                     <br>
                     <div class="mb-3" *ngIf="rol == 'Estudiante'">
                         <label for="nombre" class="mb-1 col-lg-4">CARRERA</label>
-                        <input type="text" name="carrera" class="form-control  rounded-pill">
+                        <input type="text" name="carrera" class="form-control  rounded-pill mb-4">
+                        <label for="nombre" class="mb-1 col-lg-4">CODIGO</label>
+                        <input type="text" name="codigo" class="form-control  rounded-pill">
                     </div>
                     <button (click)="inscripcion()" class="btn btn-primary btn-block mt-4">
                         ENVIAR
