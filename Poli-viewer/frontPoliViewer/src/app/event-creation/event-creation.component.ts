@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../models/event.model'
 import { EventosService } from '../services/eventos.service'
-import { Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class EventCreationComponent implements OnInit {
 
-  event: Event = {
+  idEvent: string;
+
+  event: any = {
     nombre: '',
     duracion: 0,
     descripcion: '',
@@ -20,17 +22,31 @@ export class EventCreationComponent implements OnInit {
     numberParticipants: 0,
   };
 
-  constructor(private eventosService: EventosService, private router: Router) { }
+  edit = false;
+
+  constructor(private eventosService: EventosService, private router: Router, private avtivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idEvent = this.avtivatedRoute.snapshot.params.idEvent;
+    if(this.idEvent){
+      this.eventosService.getEventById (this.idEvent).subscribe (
+        res => {
+          this.event = res;
+          this.edit = true;
+        },error => console.error (error)
+      );
+    }
   }
   
-  create (name: string, description: string, duration: number, virtual: boolean, place: string){
-    this.event.nombre = name;
-    this.event.duracion = duration;
-    this.event.descripcion = description; 
-    this.event.virtual = virtual;
-    this.event.lugar = place;
+  update() {
+    this.eventosService.updateEvent(this.event.idEvent, this.event).subscribe (
+      res => {
+        console.log (res);
+      },error => console.error (error)
+    );
+  }
+
+  create (){
     this.eventosService.createEvent(localStorage.getItem ('idAdmin'), this.event).subscribe(
       (res:Event) => {
         alert ("SE HA CREADO EL EVENTO SATISFACTORIAMENTE");

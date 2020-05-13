@@ -2,31 +2,25 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
             <div class="card">
-                <form class="card-body"> 
+                <form class="card-body">
                     <label for="nombre" class="mb-1 col-lg-4">NOMBRE</label>
                     <input type="text" name="nombre" #nombre class="form-control rounded-pill mb-3" autofocus>
+                    <label for="nombre" class="mb-1 col-lg-4">APELLIDOS</label>
+                    <input type="text" name="nombre" #nombre class="form-control rounded-pill mb-3">
                     <label for="nombre" class="mb-1 col-lg-4">CORREO</label>
                     <input type="text" name="correo" #correo class="form-control rounded-pill mb-3">
-                    <label for="nombre" class="mb-1 col-lg-4">CARRERA</label>
-                    <input type="text" name="carrera" #carrera class="form-control rounded-pill">
-                    <small id="emailHelp" class="form-text text-muted mb-3 col-lg-10">Este campo es sólo para estudiantes del Politécnico Grancolombiano.</small>
-                    <select id="inputState" class="form-control">
-                        <option>SELECCIONAR</option>
+                    <label for="nombre" class="mb-0 col-lg-10">NUMERO DE IDENTIFICACIÓN</label>
+                    <input type="text" name="id" #id class="form-control rounded-pill mb-3">
+                    <label for="nombre" class="mb-1 col-lg-4">ROL</label>
+                    <select class="form-control" name="rol" [(ngModel)]="rol">
                         <option>Profesor</option>
                         <option>Estudiante</option>
                         <option>Invitado</option>
                     </select>
                     <br>
-                    <label for="nombre" class="mb-0 col-lg-10">NUMERO DE IDENTIFICACIÓN</label>
-                    <input type="text" name="id" #id class="form-control rounded-pill mb-3">
-                    <label for="modalidad" class="mb-1 col-lg-10">MODALIDAD DEL EVENTO</label>
-                    <div class="custom-control custom-radio mb-1">
-                        <input type="radio" class="custom-control-input" id="presencial" name="radios" checked="checked">
-                        <label for="presencial" class="custom-control-label" id="lpre">PRESENCIAL</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="virtual" name="radios">
-                        <label for="virtual" class="custom-control-label">VIRTUAL</label>
+                    <div class="mb-3" *ngIf="rol == 'Estudiante'">
+                        <label for="nombre" class="mb-1 col-lg-4">CARRERA</label>
+                        <input type="text" name="carrera" class="form-control  rounded-pill">
                     </div>
                     <button (click)="inscripcion()" class="btn btn-primary btn-block mt-4">
                         ENVIAR

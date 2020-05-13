@@ -22,8 +22,8 @@ export class EventosService {
     return this.http.get(`http://localhost:3030/events/${idEvent}`);
   }
 
-  updateEvent(idEvent: number, updatedEvent: any){
-    return this.http.put(`http://localhost:3030/events/${idEvent.toString()}`, updatedEvent);
+  updateEvent(idEvent: string, updatedEvent: any){
+    return this.http.put(`http://localhost:3030/events/${idEvent}`, updatedEvent);
   }
 
   createEvent(idAdmin: string, newEvent: any): Observable<Event>{

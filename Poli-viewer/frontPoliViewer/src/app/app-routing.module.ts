@@ -16,7 +16,8 @@ const routes: Routes = [
 {path: 'inscripcion/:idEvent', component: DesrcripcionFormularioComponent},
 {path: 'charts', component:ChartComponent},
 {path: 'admin', component: MisEventosComponent},
-{path: 'admin/event-creation', component: EventCreationComponent}
+{path: 'admin/event-creation', component: EventCreationComponent},
+{path: "admin/event-update/:idEvent", component: EventCreationComponent}
 ];
 
 @NgModule({

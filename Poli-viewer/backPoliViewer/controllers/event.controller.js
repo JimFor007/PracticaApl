@@ -58,7 +58,7 @@ async function getAllEvents(req, res){
     }
 }
 
-async function getEventById(req,res){
+async function getEventById(req, res){
     try {
         const { id } = req.params;
         await dbManager.Event.findOne({where: {idEvent: id}}).then (
