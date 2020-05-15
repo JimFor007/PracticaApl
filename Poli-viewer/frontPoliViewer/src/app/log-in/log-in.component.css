@@ -1,7 +1,7 @@
 .container-fluid{
-    padding-top: 10%;
-    height: 100%;
     background-color: #1b224b;
+    padding-top: 10%;
+    height: auto;
 }
 
 .color{
