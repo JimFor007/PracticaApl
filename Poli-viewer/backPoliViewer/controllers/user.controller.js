@@ -2,12 +2,11 @@ const dbManager = require('../database/db.mannager');
 
 
 /*
-
     Create a new user
 */
 
-// CHECK IF THE REQUEST BODY IS EMPTY
 async function createUser(req,res){
+    // CHECK IF THE REQUEST BODY IS EMPTY
     if(!req.body){
         res.status (400).send(
             {   
@@ -16,7 +15,7 @@ async function createUser(req,res){
         );
         return;
     }
-// CREATING THE OBJECT TO PERSIST
+    // CREATING THE OBJECT TO PERSIST
     const newUserObject = {
         cc: req.body.cc,
         codigo: req.body.codigo,
@@ -29,6 +28,7 @@ async function createUser(req,res){
         phone: req.body.phone,
         email: req.body.email
     }
+    
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
     dbManager.User.create(newUserObject).then (
         data => {

@@ -6,42 +6,30 @@ module.exports = (sequelize, Sequelize) =>{
                 primaryKey: true,
                 autoIncrement: true 
             },
-            cc:{
+            nombre: type = Sequelize.STRING (50),
+            apellido: type = Sequelize.STRING (150),
+            email:{
+                type: Sequelize.STRING (80),
+                unique: true
+            },
+            identificationNumber:{
                 type: Sequelize.INTEGER,
                 unique: true
-            },
-            codigo:{
-                type: Sequelize.INTEGER,
-                unique: true
-            },
-            nombre: {
-                type: Sequelize.STRING,
-                unique: true
-            },
-            apellido:{
-                type: Sequelize.STRING,
-                unique: true
-            },
-            member:{
-                type: Sequelize.INTEGER
             },
             student:{
-                type: Sequelize.INTEGER
+                type: Sequelize.BOOLEAN
             },
             profesor:{
-                type: Sequelize.INTEGER
+                type: Sequelize.BOOLEAN
             },
-            administrative:{
-                type: Sequelize.INTEGER
+            invited:{
+                type: Sequelize.BOOLEAN
             },
-            phone:{
+            code:{
                 type: Sequelize.INTEGER,
                 unique: true
             },
-            email:{
-                type: Sequelize.STRING,
-                unique: true
-            }
+            career: type = Sequelize.INTEGER,
         }, {
             tableName: "users"
         }

@@ -16,20 +16,30 @@ export class DesrcripcionFormularioComponent implements OnInit {
   ngOnInit() {
     const { idEvent } = this.activedRoute.snapshot.params;
     if(idEvent){
-      this.EventosService.getEventById(idEvent).subscribe(
+      this.EventosService.getEventById(idEvent).subscribe (
         res => {
           this.event = res;
-        }, error => console.log(error)
+        }, error => console.log (error)
       );
     }
   }
 
-  inscripcion() {
+  submissionForm() {
+    this.addParticipant ();
+    this.addUser ();
+  }
+
+  addParticipant() {
     this.event.numberParticipants += 1;
     this.EventosService.updateEvent (this.event.idEvent, this.event).subscribe (
       res=>{
-        console.log("******** EVENT UPDATED *******");
-      },error => console.log(error)
+        console.log ("******** EVENT UPDATED *******");
+      },error => console.log (error)
     );
   }
+
+  addUser() {
+
+  }
+
 }
