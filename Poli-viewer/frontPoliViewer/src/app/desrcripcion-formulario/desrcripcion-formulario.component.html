@@ -4,13 +4,13 @@
             <div class="card">
                 <form class="card-body">
                     <label for="nombre" class="mb-1 col-lg-4">NOMBRE</label>
-                    <input type="text" name="nombre" #nombre class="form-control rounded-pill mb-3" autofocus>
+                    <input type="text" name="nombre"  name = "nombre" [(ngModel)] = "user.nombre" class="form-control rounded-pill mb-3" autofocus>
                     <label for="nombre" class="mb-1 col-lg-4">APELLIDOS</label>
-                    <input type="text" name="nombre" #nombre class="form-control rounded-pill mb-3">
+                    <input type="text" name="nombre"  name = "apellidos" [(ngModel)] = "user.apellidos" class="form-control rounded-pill mb-3">
                     <label for="nombre" class="mb-1 col-lg-4">CORREO</label>
-                    <input type="text" name="correo" #correo class="form-control rounded-pill mb-3">
+                    <input type="text" name="correo"  name = "email" [(ngModel)] = "user.email" class="form-control rounded-pill mb-3">
                     <label for="nombre" class="mb-0 col-lg-10">NUMERO DE IDENTIFICACIÓN</label>
-                    <input type="text" name="id" #id class="form-control rounded-pill mb-3">
+                    <input type="text" name="id"  name = "numberID" [(ngModel)] = "user.numberID" class="form-control rounded-pill mb-3">
                     <label for="nombre" class="mb-1 col-lg-4">ROL</label>
                     <select class="form-control" name="rol" [(ngModel)]="rol">
                         <option>Profesor</option>
@@ -20,9 +20,9 @@
                     <br>
                     <div class="mb-3" *ngIf="rol == 'Estudiante'">
                         <label for="nombre" class="mb-1 col-lg-4">CARRERA</label>
-                        <input type="text" name="carrera" class="form-control  rounded-pill mb-4">
+                        <input type="text"  name = "carrera" [(ngModel)] = "user.carrera" class="form-control  rounded-pill mb-4">
                         <label for="nombre" class="mb-1 col-lg-4">CODIGO</label>
-                        <input type="text" name="codigo" class="form-control  rounded-pill">
+                        <input type="text"  name = "codigo" [(ngModel)] = "user.codigo" class="form-control  rounded-pill">
                     </div>
                     <button (click)="submissionForm()" class="btn btn-primary btn-block mt-4">
                         ENVIAR

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { EventosService } from '../services/eventos.service'
+import { UsersService } from '../services/users.service'
 
 @Component({
   selector: 'app-desrcripcion-formulario',
@@ -10,8 +11,16 @@ import { EventosService } from '../services/eventos.service'
 export class DesrcripcionFormularioComponent implements OnInit {
   
   rol:string;
+  user: any = {
+    nombre: "",
+    apellidos: "",
+    email: "",
+    numberID: 0,
+    carrera: "",
+    codigo: 0
+  }
   event: any = [];
-  constructor(private activedRoute: ActivatedRoute, private EventosService: EventosService) { }
+  constructor(private activedRoute: ActivatedRoute, private EventosService: EventosService, private UsersService: UsersService) { }
 
   ngOnInit() {
     const { idEvent } = this.activedRoute.snapshot.params;
@@ -39,7 +48,11 @@ export class DesrcripcionFormularioComponent implements OnInit {
   }
 
   addUser() {
-
+    this.UsersService.inscription(this.user).subscribe (
+      res => {
+        console.log ("******** MAIL SENDED *******");
+      },error => console.error (error)
+    );
   }
 
 }
