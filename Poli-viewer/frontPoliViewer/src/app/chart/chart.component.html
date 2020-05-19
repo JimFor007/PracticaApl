@@ -1,6 +1,8 @@
 <div class="container">
       <li class="nav-item">
-        <a>Chart</a>
+        <div class="jumbotron">
+          <h1>Gráficasx</h1>
+        </div>
         <div class="chart-wrapper">
           <canvas baseChart 
           [datasets]="barChartData"
@@ -13,6 +15,9 @@
       </div>
       </li>
     <div>
+      <div class="alert alert-primary" role="alert">
+        This is a primary alert—check it out!
+      </div>
         <router-outlet></router-outlet>
     </div>
   </div>

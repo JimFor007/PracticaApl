@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
+import { AlertsModule } from 'angular-alert-module';
 
 // IMPORT COMPONENTS
 import { AppComponent } from './app.component';
@@ -33,7 +34,8 @@ import { EventCreationComponent } from './event-creation/event-creation.componen
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    AlertsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
