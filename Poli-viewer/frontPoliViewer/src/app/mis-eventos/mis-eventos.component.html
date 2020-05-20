@@ -4,8 +4,12 @@
             <h1 class="pt-2">MIS EVENTOS PROGRAMADOS</h1>
         </div>
         <div class="col-2 justify-content-sm-end">
-            <button class="btn btn-primary" style="width: auto; height: auto;" routerLink="/admin/event-creation">CREAR EVENTO</button>
+            <button class="btn btn-primary" class="btn btn-outline-dark" style="width: auto; height: auto;" routerLink="/admin/event-creation">CREAR EVENTO</button>
+            <div>
+                <button class="btn btn-primary" class="btn btn-outline-dark" style="width: auto; height: auto;" routerLink='../charts'>GRÁFICAS</button>
+            </div>
         </div>
+        
     </div>
 
     <div *ngFor= "let evento of eventos" class="row justify-content-around mb-2">        <!--    Fila para cada evento   -->

@@ -1,6 +1,11 @@
 <div class="container">
       <li class="nav-item">
-        <a>Chart</a>
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          <p>Aww yeah, Aquí se encuentra la gráfica de barras por eventos</p>
+          <hr>
+          <p class="mb-0">El eje Y representa el número de asistentes en una escala de 100, el eje X representa el nombre de cada envento</p>
+        </div>
         <div class="chart-wrapper">
           <canvas baseChart 
           [datasets]="barChartData"
