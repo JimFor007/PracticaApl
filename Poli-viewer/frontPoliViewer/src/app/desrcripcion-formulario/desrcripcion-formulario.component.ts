@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { EventosService } from '../services/eventos.service'
 import { UsersService } from '../services/users.service'
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-desrcripcion-formulario',
@@ -20,7 +21,7 @@ export class DesrcripcionFormularioComponent implements OnInit {
     codigo: 0
   }
   event: any = [];
-  constructor(private activedRoute: ActivatedRoute, private EventosService: EventosService, private UsersService: UsersService) { }
+  constructor(private activedRoute: ActivatedRoute, private EventosService: EventosService, private UsersService: UsersService,private toastr: ToastrService) { }
 
   ngOnInit() {
     const { idEvent } = this.activedRoute.snapshot.params;
@@ -36,6 +37,7 @@ export class DesrcripcionFormularioComponent implements OnInit {
   submissionForm() {
     this.addParticipant ();
     this.addUser ();
+    this.toastr.success("Ha sido añadido con exito!");
   }
 
   addParticipant() {
@@ -53,6 +55,7 @@ export class DesrcripcionFormularioComponent implements OnInit {
         console.log ("******** MAIL SENDED *******");
       },error => console.error (error)
     );
+
   }
 
 }

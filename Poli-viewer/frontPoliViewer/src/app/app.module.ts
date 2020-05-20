@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
-import { AlertsModule } from 'angular-alert-module';
+import {ToastrModule} from 'ngx-toastr';
+//import { AlertsModule } from 'angular-alert-module';
 
 // IMPORT COMPONENTS
 import { AppComponent } from './app.component';
@@ -35,7 +36,14 @@ import { EventCreationComponent } from './event-creation/event-creation.componen
     FormsModule,
     HttpClientModule,
     ChartsModule,
-    AlertsModule
+    ToastrModule.forRoot({
+      timeOut:2000,
+      progressBar:true,
+      preventDuplicates:true,
+      progressAnimation:"increasing",
+      positionClass:'toast-top-full-width',
+    }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
