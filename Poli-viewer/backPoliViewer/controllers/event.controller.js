@@ -20,11 +20,13 @@ async function createEvent(req,res){
         virtual: req.body.virtual,
         lugar: req.body.lugar,
         numberParticipants: req.body.numberParticipants,
+        date: req.body.date,
         AdminIdAdmin: req.params.id
     }
     // EXECUTING THE CREATE QUERY - INSERT THE OBJECT INTO DATABASE 
     dbManager.Event.create(newEventObject).then (
         data => {
+            console.log (data.createdAt);
             res.send (data);
         }
     ).catch (

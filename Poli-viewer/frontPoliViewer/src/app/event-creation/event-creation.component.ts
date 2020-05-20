@@ -19,6 +19,7 @@ export class EventCreationComponent implements OnInit {
     descripcion: '',
     virtual: false,
     lugar: '',
+    date: null,
     numberParticipants: 0,
   };
 

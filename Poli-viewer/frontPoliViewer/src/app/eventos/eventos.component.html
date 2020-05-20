@@ -1,25 +1,46 @@
 <div class="container-fluid mt-4">
-    <div *ngFor= "let evento of eventos" class="row justify-content-around mb-2">        <!--    Fila para cada evento   -->
-        <div class="col-lg-8">                      <!--    Columna a la izquierda para desc. del evento y el boton -->
-            <div class="principal rounded p-3">
-                <h3>{{ evento.nombre }}</h3>
-                <p>{{ evento.descripcion }}</p>
+    <div *ngFor="let evento of eventos" class="row justify-content-around mb-2">
+        <!--    Fila para cada evento   -->
+        <div class="principal rounded" style="width: 69%;">
+            <div class="row row-cols-2 justify-content-around">
+                <!--    Columna a la izquierda para desc. del evento y el boton -->
+                <div class="col pt-2">
+                    <h3><b>{{ evento.nombre }}</b></h3>
+                    <p>{{ evento.descripcion }}</p>
+                </div>
+                <div class="col col-lg-4 m-2">
+                    <div class="card">
+                        <div class="card-header bg-info">
+                            <h1>FECHA</h1>
+                        </div>
+                        <div class="card-body">
+                            <p>{{evento.date}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="btn mt-3 rounded-pill border-dark" routerLink='/inscripcion/{{ evento.idEvent }}' >Inscribirme</button>
         </div>
-        <div class="cont col-3">                      <!--    Columna a la derecha para el icono y contador de personas inscritas-->
-            <svg class="bi bi-people-circle" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-              </svg>
-              <div class="helper">
-                  <p>{{ evento.numberParticipants }}</p>
-              </div>
-              <div style="color: #666666;">
-                  <h3>Personas inscritas</h3>
-              </div>
+        <div class="cont col-3">
+            <!--    Columna a la derecha para el icono y contador de personas inscritas-->
+            <svg class="bi bi-people-circle" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
+                <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
+                    clip-rule="evenodd" />
+            </svg>
+            <div class="helper">
+                <p>{{ evento.numberParticipants }}</p>
+            </div>
+            <div style="color: #666666;">
+                <h3>Personas inscritas</h3>
+            </div>
+        </div>
+        <div style="width: 90%; height: 20%; margin-top: 0.5%;">
+            <button class="btn rounded-pill border-dark" 
+            routerLink='/inscripcion/{{ evento.idEvent }}'>Inscribirme</button>
         </div>
     </div>
-    
+
 </div>

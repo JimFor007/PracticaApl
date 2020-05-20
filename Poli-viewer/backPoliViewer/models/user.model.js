@@ -29,7 +29,7 @@ module.exports = (sequelize, Sequelize) =>{
                 type: Sequelize.INTEGER,
                 unique: true
             },
-            career: type = Sequelize.INTEGER,
+            career: type = Sequelize.STRING (50),
         }, {
             tableName: "users"
         }
