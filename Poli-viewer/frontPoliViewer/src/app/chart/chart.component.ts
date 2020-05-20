@@ -16,6 +16,15 @@ export class ChartComponent implements OnInit{
 
   barChartOptions: ChartOptions = {
     responsive: true,
+    scales:{
+      yAxes:[{
+        ticks:{
+          beginAtZero: true,
+          stepSize:10
+        }
+      }
+      ]
+    }
   };
   barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
