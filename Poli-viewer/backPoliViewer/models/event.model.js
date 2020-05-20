@@ -14,7 +14,8 @@ module.exports = (sequelize, Sequelize) =>{
             descripcion: type = Sequelize.STRING (1000),
             virtual: type= Sequelize.BOOLEAN,
             lugar: type = Sequelize.STRING (50),
-            numberParticipants: type = Sequelize.INTEGER
+            numberParticipants: type = Sequelize.INTEGER,
+            date: type = Sequelize.DATE(6)
         }, {
             tableName: "events"
         }
