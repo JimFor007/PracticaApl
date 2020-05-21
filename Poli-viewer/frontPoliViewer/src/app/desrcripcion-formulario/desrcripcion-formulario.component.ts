@@ -37,7 +37,7 @@ export class DesrcripcionFormularioComponent implements OnInit {
   submissionForm() {
     this.addParticipant ();
     this.addUser ();
-    this.toastr.success("Ha sido añadido con exito!");
+    this.toastr.success("Ha sido añadido con exito!.....se ha enviado una confirmación al correo indicado.");
   }
 
   addParticipant() {
